@@ -3,27 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */; };
-		5764BE71266F78FF00D9FD00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE70266F78FF00D9FD00 /* SceneDelegate.swift */; };
-		5764BE73266F78FF00D9FD00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE72266F78FF00D9FD00 /* ViewController.swift */; };
-		5764BE76266F78FF00D9FD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE74266F78FF00D9FD00 /* Main.storyboard */; };
 		5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE77266F790000D9FD00 /* Assets.xcassets */; };
 		5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */; };
+		5764BE85266F95AC00D9FD00 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE83266F95AC00D9FD00 /* AuthenticationViewController.swift */; };
+		5764BE86266F95AC00D9FD00 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE84266F95AC00D9FD00 /* AuthenticationViewController.xib */; };
+		5764BE8B266F982000D9FD00 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE8A266F982000D9FD00 /* Authentication.swift */; };
+		5764BE8D266F985800D9FD00 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE8C266F985800D9FD00 /* User.swift */; };
+		5764BE8F266F991300D9FD00 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE8E266F991300D9FD00 /* AuthenticationService.swift */; };
+		5764BE91266F991E00D9FD00 /* AuthenticationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE90266F991E00D9FD00 /* AuthenticationFactory.swift */; };
+		5764BE93266F9A6300D9FD00 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE92266F9A6300D9FD00 /* UserFactory.swift */; };
+		5764BEA3266FD0BA00D9FD00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BEA1266FD0BA00D9FD00 /* HomeViewController.swift */; };
+		5764BEA4266FD0BA00D9FD00 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5764BEA2266FD0BA00D9FD00 /* HomeViewController.xib */; };
+		5764BEA8266FD6A200D9FD00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5764BEAA266FD6A200D9FD00 /* Localizable.strings */; };
+		69FF2EB74DAA03639122E399 /* Pods_Schoovid_ackoffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F9AA03C8D6A0D4AA6E02C8A /* Pods-Schoovid-ackoffice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schoovid-ackoffice.release.xcconfig"; path = "Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice.release.xcconfig"; sourceTree = "<group>"; };
+		4F1718166E3A366A0CB429AA /* Pods-Schoovid-ackoffice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schoovid-ackoffice.debug.xcconfig"; path = "Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice.debug.xcconfig"; sourceTree = "<group>"; };
 		5764BE6B266F78FF00D9FD00 /* Schoovid-ackoffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schoovid-ackoffice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5764BE70266F78FF00D9FD00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5764BE72266F78FF00D9FD00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5764BE75266F78FF00D9FD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5764BE77266F790000D9FD00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5764BE7A266F790000D9FD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5764BE7C266F790000D9FD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5764BE83266F95AC00D9FD00 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		5764BE84266F95AC00D9FD00 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		5764BE8A266F982000D9FD00 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		5764BE8C266F985800D9FD00 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5764BE8E266F991300D9FD00 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		5764BE90266F991E00D9FD00 /* AuthenticationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFactory.swift; sourceTree = "<group>"; };
+		5764BE92266F9A6300D9FD00 /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
+		5764BEA1266FD0BA00D9FD00 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5764BEA2266FD0BA00D9FD00 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		5764BEA7266FD68000D9FD00 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5764BEA9266FD6A200D9FD00 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5764BEAB266FD6AE00D9FD00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schoovid_ackoffice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69FF2EB74DAA03639122E399 /* Pods_Schoovid_ackoffice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0524F4E6D4B7F8174A5E0F21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5764BE62266F78FF00D9FD00 = {
 			isa = PBXGroup;
 			children = (
 				5764BE6D266F78FF00D9FD00 /* Schoovid-ackoffice */,
 				5764BE6C266F78FF00D9FD00 /* Products */,
+				80B562B8B7562858974E3FB8 /* Pods */,
+				0524F4E6D4B7F8174A5E0F21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +87,55 @@
 		5764BE6D266F78FF00D9FD00 /* Schoovid-ackoffice */ = {
 			isa = PBXGroup;
 			children = (
+				5764BE89266F972800D9FD00 /* Services */,
+				5764BE87266F971000D9FD00 /* Models */,
+				5764BE82266F958C00D9FD00 /* Scenes */,
 				5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */,
-				5764BE70266F78FF00D9FD00 /* SceneDelegate.swift */,
-				5764BE72266F78FF00D9FD00 /* ViewController.swift */,
-				5764BE74266F78FF00D9FD00 /* Main.storyboard */,
 				5764BE77266F790000D9FD00 /* Assets.xcassets */,
 				5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */,
 				5764BE7C266F790000D9FD00 /* Info.plist */,
+				5764BEAA266FD6A200D9FD00 /* Localizable.strings */,
 			);
 			path = "Schoovid-ackoffice";
+			sourceTree = "<group>";
+		};
+		5764BE82266F958C00D9FD00 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5764BE83266F95AC00D9FD00 /* AuthenticationViewController.swift */,
+				5764BE84266F95AC00D9FD00 /* AuthenticationViewController.xib */,
+				5764BEA1266FD0BA00D9FD00 /* HomeViewController.swift */,
+				5764BEA2266FD0BA00D9FD00 /* HomeViewController.xib */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5764BE87266F971000D9FD00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5764BE8A266F982000D9FD00 /* Authentication.swift */,
+				5764BE8C266F985800D9FD00 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5764BE89266F972800D9FD00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5764BE8E266F991300D9FD00 /* AuthenticationService.swift */,
+				5764BE90266F991E00D9FD00 /* AuthenticationFactory.swift */,
+				5764BE92266F9A6300D9FD00 /* UserFactory.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		80B562B8B7562858974E3FB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F1718166E3A366A0CB429AA /* Pods-Schoovid-ackoffice.debug.xcconfig */,
+				3F9AA03C8D6A0D4AA6E02C8A /* Pods-Schoovid-ackoffice.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5764BE7F266F790000D9FD00 /* Build configuration list for PBXNativeTarget "Schoovid-ackoffice" */;
 			buildPhases = (
+				E7E7C3D8B6C083CA9159DE01 /* [CP] Check Pods Manifest.lock */,
 				5764BE67266F78FF00D9FD00 /* Sources */,
 				5764BE68266F78FF00D9FD00 /* Frameworks */,
 				5764BE69266F78FF00D9FD00 /* Resources */,
+				1254E99D6F4E7E1525FEF556 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -108,6 +181,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 5764BE62266F78FF00D9FD00;
 			productRefGroup = 5764BE6C266F78FF00D9FD00 /* Products */;
@@ -124,42 +198,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5764BEA8266FD6A200D9FD00 /* Localizable.strings in Resources */,
+				5764BE86266F95AC00D9FD00 /* AuthenticationViewController.xib in Resources */,
 				5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */,
 				5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */,
-				5764BE76266F78FF00D9FD00 /* Main.storyboard in Resources */,
+				5764BEA4266FD0BA00D9FD00 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1254E99D6F4E7E1525FEF556 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E7C3D8B6C083CA9159DE01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Schoovid-ackoffice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5764BE67266F78FF00D9FD00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5764BE73266F78FF00D9FD00 /* ViewController.swift in Sources */,
+				5764BE8D266F985800D9FD00 /* User.swift in Sources */,
+				5764BE85266F95AC00D9FD00 /* AuthenticationViewController.swift in Sources */,
+				5764BE93266F9A6300D9FD00 /* UserFactory.swift in Sources */,
+				5764BEA3266FD0BA00D9FD00 /* HomeViewController.swift in Sources */,
+				5764BE91266F991E00D9FD00 /* AuthenticationFactory.swift in Sources */,
 				5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */,
-				5764BE71266F78FF00D9FD00 /* SceneDelegate.swift in Sources */,
+				5764BE8B266F982000D9FD00 /* Authentication.swift in Sources */,
+				5764BE8F266F991300D9FD00 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5764BE74266F78FF00D9FD00 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5764BE75266F78FF00D9FD00 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5764BE7A266F790000D9FD00 /* Base */,
+				5764BEA7266FD68000D9FD00 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5764BEAA266FD6A200D9FD00 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5764BEA9266FD6A200D9FD00 /* fr */,
+				5764BEAB266FD6AE00D9FD00 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -169,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -230,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -283,6 +410,7 @@
 		};
 		5764BE80266F790000D9FD00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F1718166E3A366A0CB429AA /* Pods-Schoovid-ackoffice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +430,7 @@
 		};
 		5764BE81266F790000D9FD00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F9AA03C8D6A0D4AA6E02C8A /* Pods-Schoovid-ackoffice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

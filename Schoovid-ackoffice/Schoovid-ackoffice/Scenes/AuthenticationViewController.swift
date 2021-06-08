@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class AuthenticationViewController: UIViewController {
     
     var authService: AuthenticationService = AuthenticationService()
@@ -19,6 +20,10 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           self.navigationController?.setNavigationBarHidden(true,animated:animated)
     }
 
     @IBAction func loginButton(_ sender: Any) {
@@ -43,9 +48,11 @@ class AuthenticationViewController: UIViewController {
         self.authService.auth(login: auth){ (userInfo) in
             DispatchQueue.main.sync {
                 
-                if(userInfo != nil){
+                if(userInfo?.id != nil){
                     
-                    print("hello world")
+                    self.navigationController?.pushViewController(HomeViewController(), animated : true)
+                    
+                   
                     
                 } else {
                     let alertError = UIAlertController(title:"Erreur",message:"Votre nom d'utilisateur ou votre mot de passe est incorrect",preferredStyle: .alert)
