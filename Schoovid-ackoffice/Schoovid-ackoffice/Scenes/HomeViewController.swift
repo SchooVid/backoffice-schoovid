@@ -8,7 +8,7 @@
 import UIKit
 import SideMenu
 
-class HomeViewController: UIViewController, MenuControllerDelegate {
+class HomeViewController: UIViewController{
     
     private var sideMenu: SideMenuNavigationController?
 
@@ -16,36 +16,27 @@ class HomeViewController: UIViewController, MenuControllerDelegate {
         super.viewDidLoad()
         self.title = "Home"
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
-        
-        // Do any additional setup after loading the view.
-        
-        let menu =  MenuController(with: [
-            NSLocalizedString("home.controller.title", comment: "")
-        ])
-              menu.delegate = self
-              sideMenu = SideMenuNavigationController(rootViewController: menu)
-              sideMenu?.leftSide = true
-              SideMenuManager.default.leftMenuNavigationController = sideMenu
-              SideMenuManager.default.addPanGestureToPresent(toView: view)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-           self.navigationController?.setNavigationBarHidden(false,animated:animated)
-    }
-    
-    @objc func didTapMenuButton() {
-        present(sideMenu!, animated: true)
-    }
-    
-    func didSelectMenuItem(named: String) {
-            sideMenu?.dismiss(animated: true, completion: {
-                if named == NSLocalizedString("home.controller.title", comment: "") {
-                    print("ok")
-                }
-            })
-        }
+        let proposedCourseVC = UINavigationController(rootViewController: ProposedCourseViewController())
+        let validatedCourseVC = UINavigationController(rootViewController: ValidatedCourseViewController())
 
+        
+        super.viewDidLoad()
+        
+        proposedCourseVC.title = "Liste des cours proposés"
+        validatedCourseVC.title = "Liste des cours validés"
+    
+        //We could set images for each items in the tab bar
+        
+        let tabBarVC = UITabBarController()
+        tabBarVC.setViewControllers([
+        proposedCourseVC,
+        validatedCourseVC]
+        , animated: false)
+        
+        tabBarVC.modalPresentationStyle = .fullScreen
+        
+        present(tabBarVC,animated: true)
+        }
 
     /*
     // MARK: - Navigation
@@ -59,7 +50,7 @@ class HomeViewController: UIViewController, MenuControllerDelegate {
 
 }
 
-protocol MenuControllerDelegate {
+/*protocol MenuControllerDelegate {
     func didSelectMenuItem(named:String)
 }
 
@@ -107,4 +98,5 @@ class MenuController: UITableViewController{
         delegate?.didSelectMenuItem(named: selectedItem)
         
     }
-}
+}*/
+
