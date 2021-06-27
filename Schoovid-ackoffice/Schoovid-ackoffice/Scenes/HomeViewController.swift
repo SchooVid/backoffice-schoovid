@@ -10,14 +10,21 @@ import SideMenu
 
 class HomeViewController: UIViewController{
     
-    private var sideMenu: SideMenuNavigationController?
+    var user: User!
+    
+    //Set the newInstance method
+    static func newInstance(user : User) -> HomeViewController
+    {
+        let controller = HomeViewController()
+        controller.user = user
+        return controller
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
-        
         let proposedCourseVC = UINavigationController(rootViewController: ProposedCourseViewController())
-        let validatedCourseVC = UINavigationController(rootViewController: ValidatedCourseViewController())
+        let validatedCourseVC = UINavigationController(rootViewController: ValidatedCourseViewController.newInstance(user: user))
 
         
         super.viewDidLoad()

@@ -10,26 +10,32 @@ import UIKit
 class ValidatedCourseViewController: UIViewController {
 
     @IBOutlet var tableViewCourse: UITableView!
+    var user : User!
     var courses: [Course] = []
     let courseService: CourseService = CourseService()
+    
+    static func newInstance(user: User) -> ValidatedCourseViewController
+    {
+        let validatedCourseController = ValidatedCourseViewController()
+        validatedCourseController.user = user
+        
+        return validatedCourseController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Liste des cours validés"
         view.backgroundColor = .systemBlue
-        
+ 
         self.tableViewCourse.dataSource = self
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.courseService.list(completion: { (courses) in
-                
-            self.courses = courses
+        self.courseService.getCourseFromUser(userId: self.user.id!, completion: { (course) in
+            self.courses = course
             DispatchQueue.main.sync {
-                
                 self.tableViewCourse.reloadData()
-                
             }
             
         })

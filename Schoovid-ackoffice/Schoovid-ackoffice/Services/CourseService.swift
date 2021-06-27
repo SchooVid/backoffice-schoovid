@@ -38,4 +38,41 @@ class CourseService {
         task.resume()
     }
     
+    public func getCourseFromUser(userId : String, completion : @escaping ([Course]) -> Void) -> Void {
+        
+        print("hello");
+        
+        guard let apiCourseURL = URL(string:"http://localhost:3000/course/professor-course/\(userId)")
+        else
+        {
+            completion([])
+            return
+        }
+        
+        
+        let task = URLSession.shared.dataTask(with: apiCourseURL)
+        {
+                (data,response,error) in
+            
+            guard error == nil, let d = data else {
+                completion([])
+                return
+            }
+            
+            let professorCourse = try? JSONSerialization.jsonObject(with: d, options: .allowFragments)
+            
+            guard let courses = professorCourse as? [ [String:Any] ] else {
+                completion([])
+                return
+            }
+            
+            let res = courses.compactMap(CourseFactory.courseFromDictonnary(_:))
+            completion(res)
+        }
+        
+        task.resume()
+        
+        
+    }
+    
 }

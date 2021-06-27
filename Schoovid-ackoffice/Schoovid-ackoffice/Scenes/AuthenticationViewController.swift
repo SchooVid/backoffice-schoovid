@@ -50,7 +50,8 @@ class AuthenticationViewController: UIViewController {
                 
                 if(userInfo?.id != nil){
                     
-                    self.navigationController?.pushViewController(HomeViewController(), animated : true)
+                    let homeController = HomeViewController.newInstance(user: userInfo!)
+                    self.navigationController?.pushViewController(homeController, animated : true)
                     
                    
                     
