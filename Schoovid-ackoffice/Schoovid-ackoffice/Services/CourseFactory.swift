@@ -13,7 +13,7 @@ class CourseFactory{
         
         let id = dict["id"] as? String
         let libelle = dict["libelle"] as? String
-        let desc = dict["desc"] as? String
+        let desc = dict["description"] as? String
         let date_diffusion = dict["date_diffusion"] as? String
         let date_fin_diffusion = dict["date_fin_diffusion"] as? String
         let lien_diffusion = dict["lien_diffusion"] as? String
@@ -30,7 +30,7 @@ class CourseFactory{
         var dict: [String: Any] = [:]
         dict["id"] = course.id
         dict["libelle"] = course.libelle
-        dict["desc"] = course.desc
+        dict["description"] = course.desc
         dict["date_diffusion"] = course.date_diffusion
         dict["date_fin_diffusion"] = course.date_fin_diffusion
         dict["lien_diffusion"] = course.lien_diffusion
@@ -50,7 +50,7 @@ class CourseFactory{
         }
         
         if let desc = course.desc {
-            dict["desc"] = desc
+            dict["description"] = desc
         }
         
         if let date_diffusion = course.date_diffusion {

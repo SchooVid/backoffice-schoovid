@@ -20,7 +20,7 @@ class Course: CustomStringConvertible{
     var categorieId:String?
     
     var description: String{
-        return "User : { \(self.id), \(self.libelle), \(self.desc), \(self.date_diffusion), \(self.date_fin_diffusion), \(self.lien_diffusion), \(self.formateurId), \(self.niveauId), \(self.categorieId)   }"
+        return "Course : { \(self.id), \(self.libelle), \(self.desc), \(self.date_diffusion), \(self.date_fin_diffusion), \(self.lien_diffusion), \(self.formateurId), \(self.niveauId), \(self.categorieId)   }"
     }
     
     public init(id : String?, libelle : String?, desc : String?, date_diffusion : String?, date_fin_diffusion : String?, lien_diffusion : String?, formateurId : String?, niveauId : String?, categorieId : String?){

@@ -14,6 +14,10 @@
 		573B032F26827FFC00457514 /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B032E26827FFC00457514 /* CourseService.swift */; };
 		573B03322682838800457514 /* ValidatedCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B03302682838800457514 /* ValidatedCourseViewController.swift */; };
 		573B03332682838800457514 /* ValidatedCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573B03312682838800457514 /* ValidatedCourseViewController.xib */; };
+		573B0339268940F300457514 /* LiveAndDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B0337268940F300457514 /* LiveAndDetailViewController.swift */; };
+		573B033A268940F300457514 /* LiveAndDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573B0338268940F300457514 /* LiveAndDetailViewController.xib */; };
+		57550731268B2275001B752D /* ValidatedCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755072F268B2275001B752D /* ValidatedCourseTableViewCell.swift */; };
+		57550732268B2275001B752D /* ValidatedCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */; };
 		5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */; };
 		5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE77266F790000D9FD00 /* Assets.xcassets */; };
 		5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */; };
@@ -40,6 +44,10 @@
 		573B032E26827FFC00457514 /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
 		573B03302682838800457514 /* ValidatedCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedCourseViewController.swift; sourceTree = "<group>"; };
 		573B03312682838800457514 /* ValidatedCourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatedCourseViewController.xib; sourceTree = "<group>"; };
+		573B0337268940F300457514 /* LiveAndDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAndDetailViewController.swift; sourceTree = "<group>"; };
+		573B0338268940F300457514 /* LiveAndDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveAndDetailViewController.xib; sourceTree = "<group>"; };
+		5755072F268B2275001B752D /* ValidatedCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedCourseTableViewCell.swift; sourceTree = "<group>"; };
+		57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatedCourseTableViewCell.xib; sourceTree = "<group>"; };
 		5764BE6B266F78FF00D9FD00 /* Schoovid-ackoffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schoovid-ackoffice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5764BE77266F790000D9FD00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +88,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5755072C268B21A3001B752D /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5755072F268B2275001B752D /* ValidatedCourseTableViewCell.swift */,
+				57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
 		5764BE62266F78FF00D9FD00 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,7 @@
 		5764BE6D266F78FF00D9FD00 /* Schoovid-ackoffice */ = {
 			isa = PBXGroup;
 			children = (
+				5755072C268B21A3001B752D /* CustomComponents */,
 				5764BE89266F972800D9FD00 /* Services */,
 				5764BE87266F971000D9FD00 /* Models */,
 				5764BE82266F958C00D9FD00 /* Scenes */,
@@ -124,6 +142,8 @@
 				5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */,
 				573B03302682838800457514 /* ValidatedCourseViewController.swift */,
 				573B03312682838800457514 /* ValidatedCourseViewController.xib */,
+				573B0337268940F300457514 /* LiveAndDetailViewController.swift */,
+				573B0338268940F300457514 /* LiveAndDetailViewController.xib */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -224,6 +244,8 @@
 				573B03332682838800457514 /* ValidatedCourseViewController.xib in Resources */,
 				5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */,
 				5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */,
+				573B033A268940F300457514 /* LiveAndDetailViewController.xib in Resources */,
+				57550732268B2275001B752D /* ValidatedCourseTableViewCell.xib in Resources */,
 				5726D9BB2681A35300D0E15F /* ProposedCourseViewController.xib in Resources */,
 				5764BEA4266FD0BA00D9FD00 /* HomeViewController.xib in Resources */,
 			);
@@ -285,7 +307,9 @@
 				5764BE93266F9A6300D9FD00 /* UserFactory.swift in Sources */,
 				5764BEA3266FD0BA00D9FD00 /* HomeViewController.swift in Sources */,
 				5764BE91266F991E00D9FD00 /* AuthenticationFactory.swift in Sources */,
+				573B0339268940F300457514 /* LiveAndDetailViewController.swift in Sources */,
 				5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */,
+				57550731268B2275001B752D /* ValidatedCourseTableViewCell.swift in Sources */,
 				5764BE8B266F982000D9FD00 /* Authentication.swift in Sources */,
 				5764BE8F266F991300D9FD00 /* AuthenticationService.swift in Sources */,
 				573B032D26827C1300457514 /* CourseFactory.swift in Sources */,
