@@ -18,6 +18,8 @@
 		573B033A268940F300457514 /* LiveAndDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 573B0338268940F300457514 /* LiveAndDetailViewController.xib */; };
 		57550731268B2275001B752D /* ValidatedCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755072F268B2275001B752D /* ValidatedCourseTableViewCell.swift */; };
 		57550732268B2275001B752D /* ValidatedCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */; };
+		5755073E268D2D34001B752D /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755073C268D2D34001B752D /* CreateCourseViewController.swift */; };
+		5755073F268D2D34001B752D /* CreateCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755073D268D2D34001B752D /* CreateCourseViewController.xib */; };
 		5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */; };
 		5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE77266F790000D9FD00 /* Assets.xcassets */; };
 		5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */; };
@@ -48,6 +50,8 @@
 		573B0338268940F300457514 /* LiveAndDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveAndDetailViewController.xib; sourceTree = "<group>"; };
 		5755072F268B2275001B752D /* ValidatedCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedCourseTableViewCell.swift; sourceTree = "<group>"; };
 		57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatedCourseTableViewCell.xib; sourceTree = "<group>"; };
+		5755073C268D2D34001B752D /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
+		5755073D268D2D34001B752D /* CreateCourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCourseViewController.xib; sourceTree = "<group>"; };
 		5764BE6B266F78FF00D9FD00 /* Schoovid-ackoffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schoovid-ackoffice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5764BE77266F790000D9FD00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +101,70 @@
 			path = CustomComponents;
 			sourceTree = "<group>";
 		};
+		5755073A268D2CF4001B752D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5764BE84266F95AC00D9FD00 /* AuthenticationViewController.xib */,
+				5764BE83266F95AC00D9FD00 /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		5755073B268D2D07001B752D /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				573B03302682838800457514 /* ValidatedCourseViewController.swift */,
+				573B03312682838800457514 /* ValidatedCourseViewController.xib */,
+				573B0337268940F300457514 /* LiveAndDetailViewController.swift */,
+				573B0338268940F300457514 /* LiveAndDetailViewController.xib */,
+				5755073C268D2D34001B752D /* CreateCourseViewController.swift */,
+				5755073D268D2D34001B752D /* CreateCourseViewController.xib */,
+				5726D9B82681A35300D0E15F /* ProposedCourseViewController.swift */,
+				5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		575507402690C7A2001B752D /* CourseLevel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CourseLevel;
+			sourceTree = "<group>";
+		};
+		575507412690C7C6001B752D /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				573B032C26827C1300457514 /* CourseFactory.swift */,
+				573B032E26827FFC00457514 /* CourseService.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		575507422690C7CB001B752D /* CourseCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CourseCategory;
+			sourceTree = "<group>";
+		};
+		575507442690C7F8001B752D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5764BE8E266F991300D9FD00 /* AuthenticationService.swift */,
+				5764BE90266F991E00D9FD00 /* AuthenticationFactory.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		575507452690C860001B752D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5764BE92266F9A6300D9FD00 /* UserFactory.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		5764BE62266F78FF00D9FD00 = {
 			isa = PBXGroup;
 			children = (
@@ -134,16 +202,10 @@
 		5764BE82266F958C00D9FD00 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				5764BE83266F95AC00D9FD00 /* AuthenticationViewController.swift */,
-				5764BE84266F95AC00D9FD00 /* AuthenticationViewController.xib */,
+				5755073B268D2D07001B752D /* Course */,
+				5755073A268D2CF4001B752D /* Authentication */,
 				5764BEA1266FD0BA00D9FD00 /* HomeViewController.swift */,
 				5764BEA2266FD0BA00D9FD00 /* HomeViewController.xib */,
-				5726D9B82681A35300D0E15F /* ProposedCourseViewController.swift */,
-				5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */,
-				573B03302682838800457514 /* ValidatedCourseViewController.swift */,
-				573B03312682838800457514 /* ValidatedCourseViewController.xib */,
-				573B0337268940F300457514 /* LiveAndDetailViewController.swift */,
-				573B0338268940F300457514 /* LiveAndDetailViewController.xib */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -161,11 +223,11 @@
 		5764BE89266F972800D9FD00 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5764BE8E266F991300D9FD00 /* AuthenticationService.swift */,
-				5764BE90266F991E00D9FD00 /* AuthenticationFactory.swift */,
-				5764BE92266F9A6300D9FD00 /* UserFactory.swift */,
-				573B032C26827C1300457514 /* CourseFactory.swift */,
-				573B032E26827FFC00457514 /* CourseService.swift */,
+				575507452690C860001B752D /* User */,
+				575507442690C7F8001B752D /* Authentication */,
+				575507422690C7CB001B752D /* CourseCategory */,
+				575507412690C7C6001B752D /* Course */,
+				575507402690C7A2001B752D /* CourseLevel */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -248,6 +310,7 @@
 				57550732268B2275001B752D /* ValidatedCourseTableViewCell.xib in Resources */,
 				5726D9BB2681A35300D0E15F /* ProposedCourseViewController.xib in Resources */,
 				5764BEA4266FD0BA00D9FD00 /* HomeViewController.xib in Resources */,
+				5755073F268D2D34001B752D /* CreateCourseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +377,7 @@
 				5764BE8F266F991300D9FD00 /* AuthenticationService.swift in Sources */,
 				573B032D26827C1300457514 /* CourseFactory.swift in Sources */,
 				573B03322682838800457514 /* ValidatedCourseViewController.swift in Sources */,
+				5755073E268D2D34001B752D /* CreateCourseViewController.swift in Sources */,
 				573B032F26827FFC00457514 /* CourseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

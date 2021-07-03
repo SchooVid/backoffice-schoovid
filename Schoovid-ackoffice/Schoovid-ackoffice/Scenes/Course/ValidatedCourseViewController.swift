@@ -14,6 +14,7 @@ class ValidatedCourseViewController: UIViewController {
     var courses: [Course] = []
     let courseService: CourseService = CourseService()
     
+    
     static func newInstance(user: User) -> ValidatedCourseViewController
     {
         let validatedCourseController = ValidatedCourseViewController()
@@ -23,6 +24,8 @@ class ValidatedCourseViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable");
+        
         super.viewDidLoad()
         title = "Liste des cours validés"
         view.backgroundColor = .systemBlue
@@ -33,8 +36,16 @@ class ValidatedCourseViewController: UIViewController {
         self.tableViewCourse.register(UINib(nibName: "ValidatedCourseTableViewCell", bundle: nil), forCellReuseIdentifier: "course-cell")
         self.tableViewCourse.rowHeight = UITableView.automaticDimension
         
+        self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddProduct))
+        ]
+        
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func handleAddProduct() {
+        navigationController?.pushViewController(CreateCourseViewController(), animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
