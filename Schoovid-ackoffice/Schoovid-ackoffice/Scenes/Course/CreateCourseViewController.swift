@@ -13,14 +13,40 @@ class CreateCourseViewController: UIViewController{
     @IBOutlet var descriptionTextField: UITextField!
     @IBOutlet var dateDiffusionDatePicker: UIDatePicker!
     @IBOutlet var dateFinDiffusionDatePicker: UIDatePicker!
+    @IBOutlet var categoryPickerView: UIPickerView!
+    
+    var courseCategories : [CourseCategory] = []
+    var courseCategoriesService : CourseCategoryService = CourseCategoryService()
+    
+    var pickerData : [String] = [String]()
+    var idSelected : String = ""
     
     
     override func viewDidLoad() {
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable");
         super.viewDidLoad()
         self.title = "Ajouter un cours"
         
+        self.categoryPickerView.delegate = self
+        self.categoryPickerView.dataSource = self
         
+        pickerData = ["Item 1","Item 2"]
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.courseCategoriesService.getAllCourseCategory {
+            (category) in
+            self.courseCategories = category
+            DispatchQueue.main.sync {
+                self.categoryPickerView.reloadAllComponents()
+            }
+            
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     @IBAction func handleAdd(_ sender: Any) {
@@ -67,4 +93,30 @@ class CreateCourseViewController: UIViewController{
     }
 }
 
+extension CreateCourseViewController : UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return courseCategories.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        let category = courseCategories[row]
+        return category.libelle
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.idSelected = courseCategories[row].id!
+        print(self.idSelected)
+    }
+    
+}
+
+
+extension CreateCourseViewController : UIPickerViewDelegate {
+    
+}
 

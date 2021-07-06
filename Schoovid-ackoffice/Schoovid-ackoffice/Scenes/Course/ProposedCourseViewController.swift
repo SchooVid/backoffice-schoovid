@@ -10,7 +10,6 @@ import UIKit
 class ProposedCourseViewController: UIViewController {
 
     override func viewDidLoad() {
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable");
         super.viewDidLoad()
         view.backgroundColor = .systemPink
         // Do any additional setup after loading the view.

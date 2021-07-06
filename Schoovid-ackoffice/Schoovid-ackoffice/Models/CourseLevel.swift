@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class CourseLevel : CustomStringConvertible {
+    
+    var id: String?
+    var libelle: String?
+    var description: String {
+        return "Course level : { \(self.id) , \(self.description) }"
+    }
+    
+    public init(id : String?, libelle : String?)
+    {
+        self.id = id
+        self.libelle = libelle
+    }
+}

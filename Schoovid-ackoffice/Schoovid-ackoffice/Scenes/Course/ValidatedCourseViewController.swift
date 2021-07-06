@@ -24,9 +24,9 @@ class ValidatedCourseViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable");
         
         super.viewDidLoad()
+        self.view.translatesAutoresizingMaskIntoConstraints = true;
         title = "Liste des cours validés"
         view.backgroundColor = .systemBlue
  

@@ -20,6 +20,12 @@
 		57550732268B2275001B752D /* ValidatedCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */; };
 		5755073E268D2D34001B752D /* CreateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755073C268D2D34001B752D /* CreateCourseViewController.swift */; };
 		5755073F268D2D34001B752D /* CreateCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755073D268D2D34001B752D /* CreateCourseViewController.xib */; };
+		575507472690C998001B752D /* CourseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575507462690C998001B752D /* CourseCategory.swift */; };
+		5755074B2690CA23001B752D /* CourseLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755074A2690CA23001B752D /* CourseLevel.swift */; };
+		5755074D2690DA4F001B752D /* CourseCategoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755074C2690DA4F001B752D /* CourseCategoryFactory.swift */; };
+		5755074F2690DACC001B752D /* CourseCategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755074E2690DACC001B752D /* CourseCategoryService.swift */; };
+		575507512694F936001B752D /* CourseLevelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575507502694F936001B752D /* CourseLevelFactory.swift */; };
+		575507532694F99C001B752D /* CourseLevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575507522694F99C001B752D /* CourseLevelService.swift */; };
 		5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */; };
 		5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE77266F790000D9FD00 /* Assets.xcassets */; };
 		5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */; };
@@ -52,6 +58,12 @@
 		57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ValidatedCourseTableViewCell.xib; sourceTree = "<group>"; };
 		5755073C268D2D34001B752D /* CreateCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseViewController.swift; sourceTree = "<group>"; };
 		5755073D268D2D34001B752D /* CreateCourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCourseViewController.xib; sourceTree = "<group>"; };
+		575507462690C998001B752D /* CourseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategory.swift; sourceTree = "<group>"; };
+		5755074A2690CA23001B752D /* CourseLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLevel.swift; sourceTree = "<group>"; };
+		5755074C2690DA4F001B752D /* CourseCategoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategoryFactory.swift; sourceTree = "<group>"; };
+		5755074E2690DACC001B752D /* CourseCategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategoryService.swift; sourceTree = "<group>"; };
+		575507502694F936001B752D /* CourseLevelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLevelFactory.swift; sourceTree = "<group>"; };
+		575507522694F99C001B752D /* CourseLevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLevelService.swift; sourceTree = "<group>"; };
 		5764BE6B266F78FF00D9FD00 /* Schoovid-ackoffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schoovid-ackoffice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5764BE6E266F78FF00D9FD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5764BE77266F790000D9FD00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +140,8 @@
 		575507402690C7A2001B752D /* CourseLevel */ = {
 			isa = PBXGroup;
 			children = (
+				575507502694F936001B752D /* CourseLevelFactory.swift */,
+				575507522694F99C001B752D /* CourseLevelService.swift */,
 			);
 			path = CourseLevel;
 			sourceTree = "<group>";
@@ -144,6 +158,8 @@
 		575507422690C7CB001B752D /* CourseCategory */ = {
 			isa = PBXGroup;
 			children = (
+				5755074C2690DA4F001B752D /* CourseCategoryFactory.swift */,
+				5755074E2690DACC001B752D /* CourseCategoryService.swift */,
 			);
 			path = CourseCategory;
 			sourceTree = "<group>";
@@ -216,6 +232,8 @@
 				5764BE8A266F982000D9FD00 /* Authentication.swift */,
 				5764BE8C266F985800D9FD00 /* User.swift */,
 				573B032A2682794C00457514 /* Course.swift */,
+				575507462690C998001B752D /* CourseCategory.swift */,
+				5755074A2690CA23001B752D /* CourseLevel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,16 +386,22 @@
 				5726D9BA2681A35300D0E15F /* ProposedCourseViewController.swift in Sources */,
 				5764BE85266F95AC00D9FD00 /* AuthenticationViewController.swift in Sources */,
 				5764BE93266F9A6300D9FD00 /* UserFactory.swift in Sources */,
+				575507512694F936001B752D /* CourseLevelFactory.swift in Sources */,
 				5764BEA3266FD0BA00D9FD00 /* HomeViewController.swift in Sources */,
 				5764BE91266F991E00D9FD00 /* AuthenticationFactory.swift in Sources */,
 				573B0339268940F300457514 /* LiveAndDetailViewController.swift in Sources */,
+				575507472690C998001B752D /* CourseCategory.swift in Sources */,
 				5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */,
 				57550731268B2275001B752D /* ValidatedCourseTableViewCell.swift in Sources */,
 				5764BE8B266F982000D9FD00 /* Authentication.swift in Sources */,
 				5764BE8F266F991300D9FD00 /* AuthenticationService.swift in Sources */,
+				5755074B2690CA23001B752D /* CourseLevel.swift in Sources */,
+				5755074D2690DA4F001B752D /* CourseCategoryFactory.swift in Sources */,
 				573B032D26827C1300457514 /* CourseFactory.swift in Sources */,
 				573B03322682838800457514 /* ValidatedCourseViewController.swift in Sources */,
 				5755073E268D2D34001B752D /* CreateCourseViewController.swift in Sources */,
+				575507532694F99C001B752D /* CourseLevelService.swift in Sources */,
+				5755074F2690DACC001B752D /* CourseCategoryService.swift in Sources */,
 				573B032F26827FFC00457514 /* CourseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

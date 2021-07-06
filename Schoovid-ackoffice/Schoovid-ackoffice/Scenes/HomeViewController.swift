@@ -21,12 +21,10 @@ class HomeViewController: UIViewController{
         return controller
     }
 
-    override func viewDidLoad() {
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable");
-        
+    override func viewDidLoad() {        
         super.viewDidLoad()
         
-        
+        self.view.translatesAutoresizingMaskIntoConstraints = true;
         
         self.title = "Home"
         let proposedCourseVC = UINavigationController(rootViewController: ProposedCourseViewController())
