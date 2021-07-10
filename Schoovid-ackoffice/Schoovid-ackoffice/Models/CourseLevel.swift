@@ -12,7 +12,7 @@ class CourseLevel : CustomStringConvertible {
     var id: String?
     var libelle: String?
     var description: String {
-        return "Course level : { \(self.id) , \(self.description) }"
+        return "Course level : { \(self.id) , \(self.libelle) }"
     }
     
     public init(id : String?, libelle : String?)

@@ -45,7 +45,8 @@ class ValidatedCourseViewController: UIViewController {
     }
     
     @objc func handleAddProduct() {
-        navigationController?.pushViewController(CreateCourseViewController(), animated: true)
+        let createCourse = CreateCourseViewController.newInstance(user: user)
+        navigationController?.pushViewController(createCourse, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
