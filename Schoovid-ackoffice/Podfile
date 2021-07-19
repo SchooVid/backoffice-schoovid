@@ -6,6 +6,8 @@ target 'Schoovid-ackoffice' do
   use_frameworks!
 
   # Pods for Schoovid-ackoffice
-  pod 'SideMenu'
+  pod 'LFLiveKit'
+  pod 'Socket.IO-Client-Swift'
+  pod 'IHKeyboardAvoiding'
 
 end

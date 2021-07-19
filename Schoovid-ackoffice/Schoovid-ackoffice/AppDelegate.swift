@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let firstController = AuthenticationViewController(nibName:"AuthenticationViewController",bundle:nil)
+        let firstController = LiveAndDetailViewController(nibName:"LiveAndDetailViewController",bundle:nil)
         let window = UIWindow(frame:UIScreen.main.bounds)
         window.rootViewController = UINavigationController(rootViewController : firstController)
         window.makeKeyAndVisible()

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LiveAndDetailViewController" customModule="Schoovid_ackoffice" customModuleProvider="target">
             <connections>
+                <outlet property="streamButton" destination="sex-kO-o6k" id="pBQ-e5-9al"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sex-kO-o6k">
+                    <rect key="frame" x="660" y="740" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="startLive:" destination="-1" eventType="touchUpInside" id="775-QL-ijs"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="sex-kO-o6k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8gk-61-PXI"/>
+                <constraint firstItem="sex-kO-o6k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="740" id="c9O-Eb-jaE"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="101"/>
         </view>
     </objects>

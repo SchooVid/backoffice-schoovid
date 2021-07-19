@@ -1,16 +1,28 @@
 PODS:
-  - SideMenu (6.5.0)
+  - IHKeyboardAvoiding (4.7)
+  - LFLiveKit (2.6)
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
-  - SideMenu
+  - IHKeyboardAvoiding
+  - LFLiveKit
+  - Socket.IO-Client-Swift
 
 SPEC REPOS:
   trunk:
-    - SideMenu
+    - IHKeyboardAvoiding
+    - LFLiveKit
+    - Socket.IO-Client-Swift
+    - Starscream
 
 SPEC CHECKSUMS:
-  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  IHKeyboardAvoiding: 4cae0880c3975feffa278495df894c5166e71ad0
+  LFLiveKit: 2219563721f8aa0f188effc3395a06e2d53b23f2
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 902271263747a5115f395e835b6fca90b89a2547
+PODFILE CHECKSUM: 548057a16d579add0924f0b6e160d93dec59269b
 
 COCOAPODS: 1.10.1

@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57082A8926A618B700CE1DB0 /* rtmpConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082A8826A618B700CE1DB0 /* rtmpConfiguration.swift */; };
+		57082A8B26A61B3900CE1DB0 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082A8A26A61B3900CE1DB0 /* Room.swift */; };
+		57082ACF26A637B300CE1DB0 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AC826A6379900CE1DB0 /* IJKMediaFramework.framework */; };
+		57082AD026A637BF00CE1DB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AA726A62FC800CE1DB0 /* AudioToolbox.framework */; };
+		57082AD226A637C500CE1DB0 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AD126A637C500CE1DB0 /* AVFAudio.framework */; };
+		57082AD326A637CB00CE1DB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AAB26A62FE600CE1DB0 /* CoreGraphics.framework */; };
+		57082AD426A637D300CE1DB0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AAD26A62FED00CE1DB0 /* CoreMedia.framework */; };
+		57082AD526A637DA00CE1DB0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AAF26A6307600CE1DB0 /* CoreVideo.framework */; };
+		57082AD626A637E000CE1DB0 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AB126A6308B00CE1DB0 /* libbz2.tbd */; };
+		57082AD726A637E800CE1DB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AB326A6309200CE1DB0 /* libz.tbd */; };
+		57082AD826A637EF00CE1DB0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AB526A6309A00CE1DB0 /* MediaPlayer.framework */; };
+		57082AD926A637F500CE1DB0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AB726A630A100CE1DB0 /* MobileCoreServices.framework */; };
+		57082ADA26A637FC00CE1DB0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082AB926A630AB00CE1DB0 /* OpenGLES.framework */; };
+		57082ADB26A6380100CE1DB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082ABB26A630B400CE1DB0 /* QuartzCore.framework */; };
+		57082ADC26A6380700CE1DB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082ABD26A630BA00CE1DB0 /* UIKit.framework */; };
+		57082ADD26A6380E00CE1DB0 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082ABF26A630C800CE1DB0 /* VideoToolbox.framework */; };
 		5726D9BA2681A35300D0E15F /* ProposedCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5726D9B82681A35300D0E15F /* ProposedCourseViewController.swift */; };
 		5726D9BB2681A35300D0E15F /* ProposedCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */; };
 		573B032B2682794C00457514 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B032A2682794C00457514 /* Course.swift */; };
@@ -42,9 +58,57 @@
 		69FF2EB74DAA03639122E399 /* Pods_Schoovid_ackoffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		57082AC726A6379900CE1DB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E654EA8A1B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFramework;
+		};
+		57082AC926A6379900CE1DB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5450B0431E63EA4300568494;
+			remoteInfo = IJKMediaFrameworkWithSSL;
+		};
+		57082ACB26A6379900CE1DB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E654EA941B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFrameworkTests;
+		};
+		57082ADE26A6392900CE1DB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E654EA891B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3F9AA03C8D6A0D4AA6E02C8A /* Pods-Schoovid-ackoffice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schoovid-ackoffice.release.xcconfig"; path = "Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice.release.xcconfig"; sourceTree = "<group>"; };
 		4F1718166E3A366A0CB429AA /* Pods-Schoovid-ackoffice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schoovid-ackoffice.debug.xcconfig"; path = "Target Support Files/Pods-Schoovid-ackoffice/Pods-Schoovid-ackoffice.debug.xcconfig"; sourceTree = "<group>"; };
+		57082A8826A618B700CE1DB0 /* rtmpConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rtmpConfiguration.swift; sourceTree = "<group>"; };
+		57082A8A26A61B3900CE1DB0 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		57082AA726A62FC800CE1DB0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		57082AA926A62FD500CE1DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		57082AAB26A62FE600CE1DB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		57082AAD26A62FED00CE1DB0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		57082AAF26A6307600CE1DB0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		57082AB126A6308B00CE1DB0 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		57082AB326A6309200CE1DB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		57082AB526A6309A00CE1DB0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		57082AB726A630A100CE1DB0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		57082AB926A630AB00CE1DB0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		57082ABB26A630B400CE1DB0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		57082ABD26A630BA00CE1DB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		57082ABF26A630C800CE1DB0 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../../../ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		57082AD126A637C500CE1DB0 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		5726D9B82681A35300D0E15F /* ProposedCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedCourseViewController.swift; sourceTree = "<group>"; };
 		5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProposedCourseViewController.xib; sourceTree = "<group>"; };
 		573B032A2682794C00457514 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -89,6 +153,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57082ADD26A6380E00CE1DB0 /* VideoToolbox.framework in Frameworks */,
+				57082ADC26A6380700CE1DB0 /* UIKit.framework in Frameworks */,
+				57082ADB26A6380100CE1DB0 /* QuartzCore.framework in Frameworks */,
+				57082ADA26A637FC00CE1DB0 /* OpenGLES.framework in Frameworks */,
+				57082AD926A637F500CE1DB0 /* MobileCoreServices.framework in Frameworks */,
+				57082AD826A637EF00CE1DB0 /* MediaPlayer.framework in Frameworks */,
+				57082AD726A637E800CE1DB0 /* libz.tbd in Frameworks */,
+				57082AD626A637E000CE1DB0 /* libbz2.tbd in Frameworks */,
+				57082AD526A637DA00CE1DB0 /* CoreVideo.framework in Frameworks */,
+				57082AD426A637D300CE1DB0 /* CoreMedia.framework in Frameworks */,
+				57082AD326A637CB00CE1DB0 /* CoreGraphics.framework in Frameworks */,
+				57082AD226A637C500CE1DB0 /* AVFAudio.framework in Frameworks */,
+				57082AD026A637BF00CE1DB0 /* AudioToolbox.framework in Frameworks */,
+				57082ACF26A637B300CE1DB0 /* IJKMediaFramework.framework in Frameworks */,
 				69FF2EB74DAA03639122E399 /* Pods_Schoovid_ackoffice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,9 +177,41 @@
 		0524F4E6D4B7F8174A5E0F21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57082AD126A637C500CE1DB0 /* AVFAudio.framework */,
+				57082ABF26A630C800CE1DB0 /* VideoToolbox.framework */,
+				57082ABD26A630BA00CE1DB0 /* UIKit.framework */,
+				57082ABB26A630B400CE1DB0 /* QuartzCore.framework */,
+				57082AB926A630AB00CE1DB0 /* OpenGLES.framework */,
+				57082AB726A630A100CE1DB0 /* MobileCoreServices.framework */,
+				57082AB526A6309A00CE1DB0 /* MediaPlayer.framework */,
+				57082AB326A6309200CE1DB0 /* libz.tbd */,
+				57082AB126A6308B00CE1DB0 /* libbz2.tbd */,
+				57082AAF26A6307600CE1DB0 /* CoreVideo.framework */,
+				57082AAD26A62FED00CE1DB0 /* CoreMedia.framework */,
+				57082AAB26A62FE600CE1DB0 /* CoreGraphics.framework */,
+				57082AA926A62FD500CE1DB0 /* AVFoundation.framework */,
+				57082AA726A62FC800CE1DB0 /* AudioToolbox.framework */,
 				8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57082A8726A618A300CE1DB0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				57082A8826A618B700CE1DB0 /* rtmpConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		57082AC226A6379900CE1DB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57082AC826A6379900CE1DB0 /* IJKMediaFramework.framework */,
+				57082ACA26A6379900CE1DB0 /* IJKMediaFrameworkWithSSL.framework */,
+				57082ACC26A6379900CE1DB0 /* IJKMediaFrameworkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5755072C268B21A3001B752D /* CustomComponents */ = {
@@ -184,6 +294,8 @@
 		5764BE62266F78FF00D9FD00 = {
 			isa = PBXGroup;
 			children = (
+				57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */,
+				57082A8726A618A300CE1DB0 /* Configuration */,
 				5764BE6D266F78FF00D9FD00 /* Schoovid-ackoffice */,
 				5764BE6C266F78FF00D9FD00 /* Products */,
 				80B562B8B7562858974E3FB8 /* Pods */,
@@ -234,6 +346,7 @@
 				573B032A2682794C00457514 /* Course.swift */,
 				575507462690C998001B752D /* CourseCategory.swift */,
 				5755074A2690CA23001B752D /* CourseLevel.swift */,
+				57082A8A26A61B3900CE1DB0 /* Room.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +388,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				57082ADF26A6392900CE1DB0 /* PBXTargetDependency */,
 			);
 			name = "Schoovid-ackoffice";
 			productName = "Schoovid-ackoffice";
@@ -307,12 +421,42 @@
 			mainGroup = 5764BE62266F78FF00D9FD00;
 			productRefGroup = 5764BE6C266F78FF00D9FD00 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 57082AC226A6379900CE1DB0 /* Products */;
+					ProjectRef = 57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5764BE6A266F78FF00D9FD00 /* Schoovid-ackoffice */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		57082AC826A6379900CE1DB0 /* IJKMediaFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IJKMediaFramework.framework;
+			remoteRef = 57082AC726A6379900CE1DB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		57082ACA26A6379900CE1DB0 /* IJKMediaFrameworkWithSSL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IJKMediaFrameworkWithSSL.framework;
+			remoteRef = 57082AC926A6379900CE1DB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		57082ACC26A6379900CE1DB0 /* IJKMediaFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IJKMediaFrameworkTests.xctest;
+			remoteRef = 57082ACB26A6379900CE1DB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5764BE69266F78FF00D9FD00 /* Resources */ = {
@@ -383,6 +527,7 @@
 			files = (
 				573B032B2682794C00457514 /* Course.swift in Sources */,
 				5764BE8D266F985800D9FD00 /* User.swift in Sources */,
+				57082A8B26A61B3900CE1DB0 /* Room.swift in Sources */,
 				5726D9BA2681A35300D0E15F /* ProposedCourseViewController.swift in Sources */,
 				5764BE85266F95AC00D9FD00 /* AuthenticationViewController.swift in Sources */,
 				5764BE93266F9A6300D9FD00 /* UserFactory.swift in Sources */,
@@ -391,6 +536,7 @@
 				5764BE91266F991E00D9FD00 /* AuthenticationFactory.swift in Sources */,
 				573B0339268940F300457514 /* LiveAndDetailViewController.swift in Sources */,
 				575507472690C998001B752D /* CourseCategory.swift in Sources */,
+				57082A8926A618B700CE1DB0 /* rtmpConfiguration.swift in Sources */,
 				5764BE6F266F78FF00D9FD00 /* AppDelegate.swift in Sources */,
 				57550731268B2275001B752D /* ValidatedCourseTableViewCell.swift in Sources */,
 				5764BE8B266F982000D9FD00 /* Authentication.swift in Sources */,
@@ -407,6 +553,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57082ADF26A6392900CE1DB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IJKMediaFramework;
+			targetProxy = 57082ADE26A6392900CE1DB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5764BE79266F790000D9FD00 /* LaunchScreen.storyboard */ = {
@@ -561,6 +715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.schoovid.Schoovid-ackoffice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -581,6 +736,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.schoovid.Schoovid-ackoffice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
