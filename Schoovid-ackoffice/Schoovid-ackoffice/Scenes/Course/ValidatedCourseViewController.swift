@@ -28,7 +28,6 @@ class ValidatedCourseViewController: UIViewController {
         super.viewDidLoad()
         self.view.translatesAutoresizingMaskIntoConstraints = true;
         title = "Liste des cours validés"
-        view.backgroundColor = .systemBlue
  
         self.tableViewCourse.dataSource = self
         self.tableViewCourse.delegate = self
@@ -61,22 +60,45 @@ class ValidatedCourseViewController: UIViewController {
 }
 
 extension ValidatedCourseViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.courses.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let course = self.courses[indexPath.row]
+        let course = self.courses[indexPath.section]
         let cell = tableView.dequeueReusableCell(withIdentifier: "course-cell", for: indexPath) as! ValidatedCourseTableViewCell
     
         let startingDate = ISO8601ToLocalDate(isoDate : course.date_diffusion!).components(separatedBy: " ")
         
         let endingDate = ISO8601ToLocalDate(isoDate : course.date_fin_diffusion!).components(separatedBy: " ")
         
+        if(course.desc?.count == 0)
+        {
+            course.desc = NSLocalizedString("cell.noDescription", comment: "")
+        }
+        
         cell.titleLabel.text = course.libelle
-        cell.descriptionLabel.text = course.desc
-        cell.endingDateLabel.text = "Le \(endingDate[0]) à \(endingDate[1]) "
-        cell.startintDateLabel.text = "Le \(startingDate[0]) à \(startingDate[1]) "
+        cell.descriptionLabel.text = NSLocalizedString("cell.description", comment: "") + " : \(course.desc ?? NSLocalizedString("cell.noDescription", comment: ""))"
+        
+        cell.endingDateLabel.text = NSLocalizedString("cell.endingDate", comment: "") + " : \(endingDate[0]) - \(endingDate[1])"
+        
+        cell.startintDateLabel.text = NSLocalizedString("cell.startingDate", comment: "") + " : \(startingDate[0]) - \(startingDate[1]) "
         
         return cell
     }

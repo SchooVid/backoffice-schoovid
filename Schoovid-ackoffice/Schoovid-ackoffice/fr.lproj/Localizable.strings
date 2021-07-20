@@ -7,3 +7,7 @@
 */
 
 "home.controller.title" = "Accueil";
+"cell.startingDate" = "Date de début de diffusion";
+"cell.endingDate"   = "Date de fin de diffusion";
+"cell.description"  = "Description";
+"cell.noDescription" = "Pas de description disponible";

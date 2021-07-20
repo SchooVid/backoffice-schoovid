@@ -43,6 +43,7 @@ class LiveAndDetailViewController: UIViewController{
     
     @IBAction func startLive(_ sender: Any) {
         
+        
         if(streamRunning == false)
         {
             
@@ -65,11 +66,10 @@ class LiveAndDetailViewController: UIViewController{
             })
             
             streamButton.setTitle("Arrêter le live", for: .normal)
-            print("running -2")
             session.running = true;
             streamRunning = session.running
     
-            print("running -1")
+            /*print("running -1")
             //Code to display the stream
             let streamUrlToPlay = rtmpConfiguration.rtmpPlayUrl + room.key
             
@@ -90,7 +90,7 @@ class LiveAndDetailViewController: UIViewController{
             print("running 0")
             
             player.play()
-            self.returnSocket.connect()
+            self.returnSocket.connect()*/
             
         }
         else
@@ -98,7 +98,6 @@ class LiveAndDetailViewController: UIViewController{
             session.running = false
             streamRunning = session.running
             streamButton.setTitle("Démarrer le live", for: .normal)
-            player.shutdown()
             stopLive()
         }
         

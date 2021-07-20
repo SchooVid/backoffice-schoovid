@@ -82,7 +82,7 @@ class CreateCourseViewController: UIViewController{
         //Format date
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
-        dateFormatter.dateFormat = "dd-MM-YYYY HH:mm:00"
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:00"
         
         let dateDiffusion = dateFormatter.string(from: dateDiffusionDatePicker.date) 
         let dateFinDiffusion = dateFormatter.string(from : dateFinDiffusionDatePicker.date) 
@@ -124,12 +124,13 @@ class CreateCourseViewController: UIViewController{
         let course = Course(id: nil, libelle: courseLibelle, desc: description, date_diffusion: dateDiffusion, date_fin_diffusion: dateFinDiffusion, lien_diffusion: nil, formateurId: userId, niveauId: idLevel, categorieId: idCategory)
         
         
+        print(course)
+        
         self.courseService.createCourse(course: course) {
             (success) in
             
-            print(course.categorieId)
-            print(course.formateurId)
-            print(course.niveauId)
+            
+            print(success)
         }
 
     }

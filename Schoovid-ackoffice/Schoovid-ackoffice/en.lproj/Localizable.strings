@@ -7,3 +7,7 @@
 */
 
 "home.controller.title" = "Home";
+"cell.startingDate" = "Broadcast starting date";
+"cell.endingDate"   = "Broadcast ending date";
+"cell.description"  = "Description";
+"cell.noDescription" = "No description available";
