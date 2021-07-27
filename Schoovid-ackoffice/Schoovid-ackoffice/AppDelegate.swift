@@ -14,14 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
-        let firstController = LiveAndDetailViewController(nibName:"LiveAndDetailViewController",bundle:nil)
+        
+        let firstController = AuthenticationViewController(nibName:"AuthenticationViewController",bundle:nil)
         let window = UIWindow(frame:UIScreen.main.bounds)
         window.rootViewController = UINavigationController(rootViewController : firstController)
         window.makeKeyAndVisible()
         self.window = window
         return true
     }
+    
+    
 
 }
 

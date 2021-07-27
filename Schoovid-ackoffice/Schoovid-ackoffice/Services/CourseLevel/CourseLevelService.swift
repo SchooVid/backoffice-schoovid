@@ -11,7 +11,7 @@ class CourseLevelService
 {
     public func getAllCourseLevel(completion : @escaping ([CourseLevel]) -> Void ) -> Void
     {
-        guard let courseLevelURL = URL(string:"http://localhost:3000/course_level/")
+        guard let courseLevelURL = URL(string:"http://51.178.139.94:3000/course_level/")
         else {
             completion([])
             return

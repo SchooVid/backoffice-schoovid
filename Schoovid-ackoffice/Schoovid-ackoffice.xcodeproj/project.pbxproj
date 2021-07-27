@@ -23,6 +23,14 @@
 		57082ADB26A6380100CE1DB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082ABB26A630B400CE1DB0 /* QuartzCore.framework */; };
 		57082ADC26A6380700CE1DB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082ABD26A630BA00CE1DB0 /* UIKit.framework */; };
 		57082ADD26A6380E00CE1DB0 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57082ABF26A630C800CE1DB0 /* VideoToolbox.framework */; };
+		57082AEE26A7FB7800CE1DB0 /* ProposedCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082AED26A7FB7800CE1DB0 /* ProposedCourse.swift */; };
+		57082AF126A7FC7400CE1DB0 /* ProposedCourseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082AF026A7FC7400CE1DB0 /* ProposedCourseFactory.swift */; };
+		57082AF326A7FD7600CE1DB0 /* ProposedCourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082AF226A7FD7600CE1DB0 /* ProposedCourseService.swift */; };
+		57082AF626A8059200CE1DB0 /* ProposedCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082AF426A8059200CE1DB0 /* ProposedCourseTableViewCell.swift */; };
+		57082AF726A8059200CE1DB0 /* ProposedCourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57082AF526A8059200CE1DB0 /* ProposedCourseTableViewCell.xib */; };
+		57082AF926ADCF6700CE1DB0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082AF826ADCF6700CE1DB0 /* Comment.swift */; };
+		57082AFE26ADF3C400CE1DB0 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57082AFC26ADF3C400CE1DB0 /* ChatTableViewCell.swift */; };
+		57082AFF26ADF3C400CE1DB0 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57082AFD26ADF3C400CE1DB0 /* ChatTableViewCell.xib */; };
 		5726D9BA2681A35300D0E15F /* ProposedCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5726D9B82681A35300D0E15F /* ProposedCourseViewController.swift */; };
 		5726D9BB2681A35300D0E15F /* ProposedCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */; };
 		573B032B2682794C00457514 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B032A2682794C00457514 /* Course.swift */; };
@@ -55,6 +63,8 @@
 		5764BEA3266FD0BA00D9FD00 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764BEA1266FD0BA00D9FD00 /* HomeViewController.swift */; };
 		5764BEA4266FD0BA00D9FD00 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5764BEA2266FD0BA00D9FD00 /* HomeViewController.xib */; };
 		5764BEA8266FD6A200D9FD00 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5764BEAA266FD6A200D9FD00 /* Localizable.strings */; };
+		57E3097926B07326006439A0 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3097726B07326006439A0 /* ProfilePageViewController.swift */; };
+		57E3097A26B07326006439A0 /* ProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E3097826B07326006439A0 /* ProfilePageViewController.xib */; };
 		69FF2EB74DAA03639122E399 /* Pods_Schoovid_ackoffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +119,14 @@
 		57082ABF26A630C800CE1DB0 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		57082AC126A6379900CE1DB0 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../../../ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
 		57082AD126A637C500CE1DB0 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		57082AED26A7FB7800CE1DB0 /* ProposedCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedCourse.swift; sourceTree = "<group>"; };
+		57082AF026A7FC7400CE1DB0 /* ProposedCourseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedCourseFactory.swift; sourceTree = "<group>"; };
+		57082AF226A7FD7600CE1DB0 /* ProposedCourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedCourseService.swift; sourceTree = "<group>"; };
+		57082AF426A8059200CE1DB0 /* ProposedCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedCourseTableViewCell.swift; sourceTree = "<group>"; };
+		57082AF526A8059200CE1DB0 /* ProposedCourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProposedCourseTableViewCell.xib; sourceTree = "<group>"; };
+		57082AF826ADCF6700CE1DB0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		57082AFC26ADF3C400CE1DB0 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		57082AFD26ADF3C400CE1DB0 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		5726D9B82681A35300D0E15F /* ProposedCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposedCourseViewController.swift; sourceTree = "<group>"; };
 		5726D9B92681A35300D0E15F /* ProposedCourseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProposedCourseViewController.xib; sourceTree = "<group>"; };
 		573B032A2682794C00457514 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -145,6 +163,8 @@
 		5764BEA7266FD68000D9FD00 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5764BEA9266FD6A200D9FD00 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5764BEAB266FD6AE00D9FD00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		57E3097726B07326006439A0 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		57E3097826B07326006439A0 /* ProfilePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePageViewController.xib; sourceTree = "<group>"; };
 		8403B5E671FA5044CC02D2F4 /* Pods_Schoovid_ackoffice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schoovid_ackoffice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -214,11 +234,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		57082AEF26A7FC5400CE1DB0 /* Proposed Course */ = {
+			isa = PBXGroup;
+			children = (
+				57082AF026A7FC7400CE1DB0 /* ProposedCourseFactory.swift */,
+				57082AF226A7FD7600CE1DB0 /* ProposedCourseService.swift */,
+			);
+			path = "Proposed Course";
+			sourceTree = "<group>";
+		};
 		5755072C268B21A3001B752D /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
 				5755072F268B2275001B752D /* ValidatedCourseTableViewCell.swift */,
 				57550730268B2275001B752D /* ValidatedCourseTableViewCell.xib */,
+				57082AF426A8059200CE1DB0 /* ProposedCourseTableViewCell.swift */,
+				57082AF526A8059200CE1DB0 /* ProposedCourseTableViewCell.xib */,
+				57082AFC26ADF3C400CE1DB0 /* ChatTableViewCell.swift */,
+				57082AFD26ADF3C400CE1DB0 /* ChatTableViewCell.xib */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -334,6 +367,8 @@
 				5755073A268D2CF4001B752D /* Authentication */,
 				5764BEA1266FD0BA00D9FD00 /* HomeViewController.swift */,
 				5764BEA2266FD0BA00D9FD00 /* HomeViewController.xib */,
+				57E3097726B07326006439A0 /* ProfilePageViewController.swift */,
+				57E3097826B07326006439A0 /* ProfilePageViewController.xib */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -347,6 +382,8 @@
 				575507462690C998001B752D /* CourseCategory.swift */,
 				5755074A2690CA23001B752D /* CourseLevel.swift */,
 				57082A8A26A61B3900CE1DB0 /* Room.swift */,
+				57082AED26A7FB7800CE1DB0 /* ProposedCourse.swift */,
+				57082AF826ADCF6700CE1DB0 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +391,7 @@
 		5764BE89266F972800D9FD00 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57082AEF26A7FC5400CE1DB0 /* Proposed Course */,
 				575507452690C860001B752D /* User */,
 				575507442690C7F8001B752D /* Authentication */,
 				575507422690C7CB001B752D /* CourseCategory */,
@@ -464,12 +502,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5764BEA8266FD6A200D9FD00 /* Localizable.strings in Resources */,
+				57082AFF26ADF3C400CE1DB0 /* ChatTableViewCell.xib in Resources */,
 				5764BE86266F95AC00D9FD00 /* AuthenticationViewController.xib in Resources */,
 				573B03332682838800457514 /* ValidatedCourseViewController.xib in Resources */,
+				57E3097A26B07326006439A0 /* ProfilePageViewController.xib in Resources */,
 				5764BE7B266F790000D9FD00 /* LaunchScreen.storyboard in Resources */,
 				5764BE78266F790000D9FD00 /* Assets.xcassets in Resources */,
 				573B033A268940F300457514 /* LiveAndDetailViewController.xib in Resources */,
 				57550732268B2275001B752D /* ValidatedCourseTableViewCell.xib in Resources */,
+				57082AF726A8059200CE1DB0 /* ProposedCourseTableViewCell.xib in Resources */,
 				5726D9BB2681A35300D0E15F /* ProposedCourseViewController.xib in Resources */,
 				5764BEA4266FD0BA00D9FD00 /* HomeViewController.xib in Resources */,
 				5755073F268D2D34001B752D /* CreateCourseViewController.xib in Resources */,
@@ -529,11 +570,14 @@
 				5764BE8D266F985800D9FD00 /* User.swift in Sources */,
 				57082A8B26A61B3900CE1DB0 /* Room.swift in Sources */,
 				5726D9BA2681A35300D0E15F /* ProposedCourseViewController.swift in Sources */,
+				57082AF626A8059200CE1DB0 /* ProposedCourseTableViewCell.swift in Sources */,
 				5764BE85266F95AC00D9FD00 /* AuthenticationViewController.swift in Sources */,
 				5764BE93266F9A6300D9FD00 /* UserFactory.swift in Sources */,
+				57082AF326A7FD7600CE1DB0 /* ProposedCourseService.swift in Sources */,
 				575507512694F936001B752D /* CourseLevelFactory.swift in Sources */,
 				5764BEA3266FD0BA00D9FD00 /* HomeViewController.swift in Sources */,
 				5764BE91266F991E00D9FD00 /* AuthenticationFactory.swift in Sources */,
+				57082AF926ADCF6700CE1DB0 /* Comment.swift in Sources */,
 				573B0339268940F300457514 /* LiveAndDetailViewController.swift in Sources */,
 				575507472690C998001B752D /* CourseCategory.swift in Sources */,
 				57082A8926A618B700CE1DB0 /* rtmpConfiguration.swift in Sources */,
@@ -544,9 +588,13 @@
 				5755074B2690CA23001B752D /* CourseLevel.swift in Sources */,
 				5755074D2690DA4F001B752D /* CourseCategoryFactory.swift in Sources */,
 				573B032D26827C1300457514 /* CourseFactory.swift in Sources */,
+				57082AEE26A7FB7800CE1DB0 /* ProposedCourse.swift in Sources */,
 				573B03322682838800457514 /* ValidatedCourseViewController.swift in Sources */,
+				57082AF126A7FC7400CE1DB0 /* ProposedCourseFactory.swift in Sources */,
 				5755073E268D2D34001B752D /* CreateCourseViewController.swift in Sources */,
+				57E3097926B07326006439A0 /* ProfilePageViewController.swift in Sources */,
 				575507532694F99C001B752D /* CourseLevelService.swift in Sources */,
+				57082AFE26ADF3C400CE1DB0 /* ChatTableViewCell.swift in Sources */,
 				5755074F2690DACC001B752D /* CourseCategoryService.swift in Sources */,
 				573B032F26827FFC00457514 /* CourseService.swift in Sources */,
 			);
@@ -636,7 +684,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -692,7 +740,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -720,7 +768,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.schoovid.Schoovid-ackoffice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -742,7 +790,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.schoovid.Schoovid-ackoffice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

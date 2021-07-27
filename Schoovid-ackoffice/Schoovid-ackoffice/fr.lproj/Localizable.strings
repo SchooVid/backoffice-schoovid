@@ -5,9 +5,21 @@
   Created by Nicolas TRAN on 08/06/2021.
   
 */
+"auth.login" = "Connexion";
 
 "home.controller.title" = "Accueil";
+
+"proposed_course.controller.title" = "Cours proposé(s)";
+
 "cell.startingDate" = "Date de début de diffusion";
 "cell.endingDate"   = "Date de fin de diffusion";
 "cell.description"  = "Description";
 "cell.noDescription" = "Pas de description disponible";
+"cell.category" = "Categorie";
+"cell.level" = "Niveau";
+"cell.proposedBy" = "Proposé par";
+
+"live.startLive" = "Démarrer le live";
+"live.stopLive" = "Arrêter le live";
+
+"create.course.modify" = "Modifier le cours";

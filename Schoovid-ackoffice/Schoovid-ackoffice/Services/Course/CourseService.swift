@@ -11,7 +11,7 @@ class CourseService {
     
     public func list(completion : @escaping ([Course]) -> Void) -> Void {
         
-        guard let apiCourseURL = URL(string:"http://localhost:3000/course/all")
+        guard let apiCourseURL = URL(string:"http://51.178.139.94:3000/course/all")
         else {
             completion([])
             return
@@ -40,7 +40,7 @@ class CourseService {
     
     public func getCourseFromUser(userId : String, completion : @escaping ([Course]) -> Void) -> Void {
         
-        guard let apiCourseURL = URL(string:"http://localhost:3000/course/professor-course/\(userId)")
+        guard let apiCourseURL = URL(string:"http://51.178.139.94:3000/course/professor-course/\(userId)")
         else
         {
             completion([])
@@ -74,7 +74,7 @@ class CourseService {
     
     public func createCourse(course : Course, completion: @escaping (Bool) -> Void) -> Void {
         
-        guard let createCourseURL =  URL(string : "http://localhost:3000/course/") else {
+        guard let createCourseURL =  URL(string : "http://51.178.139.94:3000/course/") else {
             completion(false)
             return
         }
@@ -103,12 +103,10 @@ class CourseService {
     }
     
     public func deleteCourse(courseId : String, completion : @escaping(Bool) -> Void) -> Void {
-        guard let deleteCourseURL = URL(string:"http://localhost:3000/course/delete/\(courseId)") else {
+        guard let deleteCourseURL = URL(string:"http://51.178.139.94:3000/course/delete/\(courseId)") else {
             completion(false)
             return
         }
-        
-        print(deleteCourseURL)
         
         var request = URLRequest(url : deleteCourseURL)
         request.httpMethod = "DELETE"

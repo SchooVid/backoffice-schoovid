@@ -6,8 +6,23 @@
   
 */
 
+"auth.login" = "Login";
+
+
 "home.controller.title" = "Home";
+
+"proposed_course.controller.title" = "Proposed course(s)";
+
 "cell.startingDate" = "Broadcast starting date";
 "cell.endingDate"   = "Broadcast ending date";
 "cell.description"  = "Description";
 "cell.noDescription" = "No description available";
+"cell.category" = "Category";
+"cell.level" = "Level";
+"cell.proposedBy" = "Proposed by";
+
+"live.startLive" = "Start thelive";
+"live.stopLive" = "Stop the live";
+
+"create.course.modify" = "Modify the course";
+

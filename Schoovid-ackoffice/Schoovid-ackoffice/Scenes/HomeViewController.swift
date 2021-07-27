@@ -28,6 +28,9 @@ class HomeViewController: UIViewController{
         self.title = "Home"
         let proposedCourseVC = UINavigationController(rootViewController: ProposedCourseViewController())
         let validatedCourseVC = UINavigationController(rootViewController: ValidatedCourseViewController.newInstance(user: user))
+        
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
 
         
         super.viewDidLoad()
@@ -46,6 +49,14 @@ class HomeViewController: UIViewController{
         tabBarVC.modalPresentationStyle = .fullScreen
         
         present(tabBarVC,animated: true)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
     }
 
 }

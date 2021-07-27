@@ -17,6 +17,8 @@ class CreateCourseViewController: UIViewController{
     @IBOutlet var levelPickerView: UIPickerView!
     
     var user: User!
+    var course: Course!
+    var action : String!
     
     var courseCategories : [CourseCategory] = []
     var courseCategoriesService : CourseCategoryService = CourseCategoryService()
@@ -29,9 +31,18 @@ class CreateCourseViewController: UIViewController{
     var idSelectedLevel : String?
     var idSelectedCategory : String?
     
-    static func newInstance(user : User) -> CreateCourseViewController {
+    static func newInstance(user : User, action : String) -> CreateCourseViewController {
         let controller = CreateCourseViewController()
         controller.user = user
+        controller.action = action
+        return controller
+    }
+    
+    static func newInstance(user : User, course : Course, action : String) -> CreateCourseViewController {
+        let controller = CreateCourseViewController()
+        controller.user = user
+        controller.course = course
+        controller.action = action
         return controller
     }
     
@@ -47,7 +58,50 @@ class CreateCourseViewController: UIViewController{
         self.categoryPickerView.delegate = self
         self.categoryPickerView.dataSource = self
         
+        //On modify course
+        if(course != nil)
+        {
+            self.libelle.text = course.libelle
+            self.descriptionTextField.text = course.desc
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            
+            let date = ISO8601ToLocalDate(isoDate: course.date_diffusion!)
+          
+            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+            
+            let dateFormatted = dateFormatter.date(from: date)!
+            
+            let datedate = Date() + 14 * 86400
+            
+            print(datedate)
+            print(dateFormatted)
+            
+            self.dateDiffusionDatePicker.setDate(datedate, animated: false)
+            self.dateFinDiffusionDatePicker.setDate(dateFormatted, animated: false)
+        }
+        else {
+            print("Course is nil so we add a course")
+        }
+        
     }
+    
+    
+    func ISO8601ToLocalDate(isoDate : String) -> String
+    {
+        let inputDate = isoDate.replacingOccurrences(of: "T", with: " ")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssZ"
+        
+        let date = dateFormatter.date(from: inputDate) ?? Date()
+        dateFormatter.dateFormat = "dd-MM-YYYY HH:mm:ss"
+        
+        let dateToString = dateFormatter.string(from: date)
+        
+        return dateToString
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.courseCategoriesService.getAllCourseCategory {
@@ -123,14 +177,16 @@ class CreateCourseViewController: UIViewController{
         
         let course = Course(id: nil, libelle: courseLibelle, desc: description, date_diffusion: dateDiffusion, date_fin_diffusion: dateFinDiffusion, lien_diffusion: nil, formateurId: userId, niveauId: idLevel, categorieId: idCategory)
         
-        
-        print(course)
-        
         self.courseService.createCourse(course: course) {
             (success) in
             
-            
-            print(success)
+            if(success)
+            {
+                self.navigationController?.pushViewController(HomeViewController(), animated: true)
+            }
+            else {
+                //return a popup
+            }
         }
 
     }

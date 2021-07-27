@@ -12,6 +12,6 @@ struct rtmpConfiguration {
     
     static var rtmpPushURL : String = "rtmp://193.70.36.58/schoovid/"
     static var rtmpPlayUrl : String = "rtmp://193.70.36.58/schoovid/"
-    static var httpServer  : String = "http://193.70.36.58:3000"
+    static var httpServer  : String = "http://193.70.36.58:3000/"
     
 }

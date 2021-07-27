@@ -10,7 +10,7 @@ import Foundation
 class AuthenticationService {
     public func auth(login : Authentication, completion: @escaping (User?)->Void)->Void {
             
-            guard let authURL = URL(string : "http://localhost:3000/auth/signin/") else {
+            guard let authURL = URL(string : "http://51.178.139.94:3000/auth/signin/") else {
                 completion(nil)
                 return
             }

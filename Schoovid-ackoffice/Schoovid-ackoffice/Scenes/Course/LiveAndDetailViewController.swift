@@ -9,38 +9,95 @@ import UIKit
 import LFLiveKit
 import SocketIO
 import IHKeyboardAvoiding
-import IJKMediaFramework
 
 class LiveAndDetailViewController: UIViewController{
     
-    let socket = SocketManager(socketURL : URL(string: rtmpConfiguration.httpServer)!, config: [.log(true), .forceWebsockets(true)])
-    
-    let returnSocket = SocketManager(socketURL: URL(string: rtmpConfiguration.httpServer)!, config: [.log(true), .forcePolling(true)])
+    let manager = SocketManager(socketURL : URL(string: rtmpConfiguration.httpServer)!, config: [.log(false), .forceWebsockets(true), .forcePolling(true)])
     
     var room: Room!
+    var comments : [Comment] = []
     var streamRunning : Bool = false
-    var player : IJKFFMoviePlayerController!
-    
+    var user : User!
+    var course : Course!
+    var socket : SocketIOClient!
+
+    @IBOutlet var updateBn: UIButton!
     @IBOutlet var streamButton: UIButton!
+    @IBOutlet var chatTabView: UITableView!
     
     lazy var session : LFLiveSession = {
         let audioConfiguration = LFLiveAudioConfiguration.default()
-        let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: LFLiveVideoQuality.low3)
+        let videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(for: LFLiveVideoQuality.high3, outputImageOrientation: .landscapeLeft)
         let session            = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)
+        videoConfiguration?.videoSize = CGSize(width: 1280, height: 720)
+        
         
         session?.delegate = self
         session?.preView = self.view
         return session!
     }()
+    
+    //Set the newInstance method
+    static func newInstance(user : User, course : Course) -> LiveAndDetailViewController
+    {
+        let controller = LiveAndDetailViewController()
+        controller.user = user
+        controller.course = course
+        return controller
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        socket = self.manager.defaultSocket
+        
+        //Configure the table view
+        self.chatTabView.delegate = self
+        self.chatTabView.dataSource = self
+        self.chatTabView.register(UINib(nibName : "ChatTableViewCell",bundle: nil), forCellReuseIdentifier: "comment-cell")
+        
+        //Configure startLive button UI
+        self.streamButton.layer.cornerRadius = 5
+        self.streamButton.setTitle(NSLocalizedString("live.startLive", comment: ""), for: .normal)
+        
+        //Configure update button
+        self.updateBn.setTitle(NSLocalizedString("create.course.modify", comment: ""), for: .normal)
+        self.updateBn.layer.cornerRadius = 5
+        
+        self.room = Room(dict : [
+            "title" : "\(course.libelle!)" as AnyObject,
+            "key" : "\(course.id!)" as AnyObject
+        ])
+        
+        socket.connect()
+        
+        socket.once("connect") {[weak self] data, ack in
+            guard let this = self else {
+                return
+            }
+            
+            this.socket.emit("create_room", this.room.toDict())
+        }
         
         session.running = false;
         streamRunning = session.running
         // Do any additional setup after loading the view.
+        
+    
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        socket.on("comment") {[weak self] data, ack in
+            DispatchQueue.main.async { [self] in
+                let comment = Comment(dict: data[0] as! [String: AnyObject])
+                self?.comments.append(comment)
+                self?.chatTabView.reloadData()
+                self?.chatTabView?.scrollToBottomRow()
+            }
+        }
+    }
+
     @IBAction func startLive(_ sender: Any) {
         
         
@@ -48,63 +105,27 @@ class LiveAndDetailViewController: UIViewController{
         {
             
             room = Room(dict : [
-                "title" : "Stream title test" as AnyObject,
-                "key" : "1234" as AnyObject
+                "title" : "\(course.libelle!)" as AnyObject,
+                "key" : "\(course.id!)" as AnyObject
             ])
             
             let stream = LFLiveStreamInfo()
             stream.url = "\(rtmpConfiguration.rtmpPushURL)\(room.key)"
+            
             session.startLive(stream)
             
-            socket.connect()
-            socket.defaultSocket.once("connect", callback: {[weak self] data, ack in
-                guard let this = self else {
-                    return
-                }
-                
-                this.socket.defaultSocket.emit("create_room", this.room.toDict())
-            })
-            
-            streamButton.setTitle("Arrêter le live", for: .normal)
+            streamButton.setTitle(NSLocalizedString("live.stopLive", comment: ""), for: .normal)
             session.running = true;
             streamRunning = session.running
     
-            /*print("running -1")
-            //Code to display the stream
-            let streamUrlToPlay = rtmpConfiguration.rtmpPlayUrl + room.key
-            
-            player = IJKFFMoviePlayerController(contentURLString: streamUrlToPlay, with: IJKFFOptions.byDefault())
-            player.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            player.view.frame = self.view.bounds
-            self.view.addSubview(player.view)
-            
-            player.prepareToPlay()
-            
-            
-            returnSocket.defaultSocket.on("connect") {[weak self] data, ack in
-                
-                self?.joinRoom()
-                
-            }
-            
-            print("running 0")
-            
-            player.play()
-            self.returnSocket.connect()*/
-            
         }
         else
         {
             session.running = false
             streamRunning = session.running
-            streamButton.setTitle("Démarrer le live", for: .normal)
+            streamButton.setTitle(NSLocalizedString("live.startLive", comment: ""), for: .normal)
             stopLive()
         }
-        
-    }
-
-    func joinRoom(){
-        socket.defaultSocket.emit("join_room",room.key)
     }
     
     func stopLive() -> Void {
@@ -116,16 +137,16 @@ class LiveAndDetailViewController: UIViewController{
         socket.disconnect()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func emit(_ sender: Any) {
+        socket.emit("test")
     }
-    */
-
+    @IBAction func updateBn(_ sender: Any) {
+        
+        let createOrModifyController = CreateCourseViewController.newInstance(user: user, course: course, action: "Modifier")
+        
+        navigationController?.pushViewController(createOrModifyController, animated: true)
+    }
+    
 }
 
 extension LiveAndDetailViewController : LFLiveSessionDelegate {
@@ -145,3 +166,85 @@ extension LiveAndDetailViewController : LFLiveSessionDelegate {
     }
     
 }
+
+extension LiveAndDetailViewController : UITableViewDelegate {
+    
+   
+    
+}
+
+extension LiveAndDetailViewController : UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView();
+        header.backgroundColor = UIColor.clear
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "comment-cell") as? ChatTableViewCell else {
+            return UITableViewCell(style: .default, reuseIdentifier: "comment-cell")
+        }
+        
+        let comment = comments[indexPath.section]
+        cell.nameAndCommentLabel.text = comment.username + " : " + comment.text
+        return cell
+    }
+    
+    
+}
+
+extension UITableView {
+    func scrollToBottomRow(){
+        DispatchQueue.main.async {
+            guard self.numberOfSections > 0 else
+            {
+                return
+            }
+            
+            var section = max(self.numberOfSections - 1 , 0)
+            var row    = max(self.numberOfRows(inSection: section) - 1, 0)
+            var indexPath = IndexPath(row: row, section: section)
+            
+            while(!self.isIndexPathValid(indexPath))
+            {
+                section = max(self.numberOfSections - 1 , 0)
+                row    = max(self.numberOfRows(inSection: section) - 1, 0)
+                indexPath = IndexPath(row: row, section: section)
+                
+                if(indexPath.section == 0)
+                {
+                    indexPath = IndexPath(row: 0, section: 0)
+                    break
+                }
+            }
+            
+            guard self.isIndexPathValid(indexPath) else { return }
+            
+            self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
+    func isIndexPathValid(_ indexPath : IndexPath) -> Bool
+    {
+        let section = indexPath.section
+        let row     = indexPath.row
+        return section < self.numberOfSections && row < self.numberOfRows(inSection: section)
+    }
+}
+
+
+
+

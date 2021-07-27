@@ -44,7 +44,7 @@ class ValidatedCourseViewController: UIViewController {
     }
     
     @objc func handleAddProduct() {
-        let createCourse = CreateCourseViewController.newInstance(user: user)
+        let createCourse = CreateCourseViewController.newInstance(user: user, action: "Ajouter")
         navigationController?.pushViewController(createCourse, animated: true)
     }
     
@@ -128,6 +128,14 @@ extension ValidatedCourseViewController : UITableViewDelegate {
         let course = self.courses[sourceIndexPath.row]
         self.courses.remove(at: sourceIndexPath.row)
         self.courses.insert(course, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let course = self.courses[indexPath.section]
+        
+        let liveAnDetail = LiveAndDetailViewController.newInstance(user: user, course: course)
+        
+        self.navigationController?.pushViewController(liveAnDetail, animated: true)
     }
 }
 

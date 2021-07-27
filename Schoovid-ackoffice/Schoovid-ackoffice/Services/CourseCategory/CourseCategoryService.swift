@@ -11,7 +11,7 @@ class CourseCategoryService {
     
     public func getAllCourseCategory(completion : @escaping ([CourseCategory]) -> Void ) -> Void
     {
-        guard let courseCategoryURL = URL(string:"http://localhost:3000/course_category/")
+        guard let courseCategoryURL = URL(string:"http://51.178.139.94:3000/course_category/")
         else {
             completion([])
             return
