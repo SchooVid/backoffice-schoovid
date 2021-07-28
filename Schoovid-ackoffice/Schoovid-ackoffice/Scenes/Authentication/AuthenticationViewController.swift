@@ -23,6 +23,9 @@ class AuthenticationViewController: UIViewController {
         self.loginButton.layer.cornerRadius = 5
         self.loginButton.setTitle(NSLocalizedString("auth.login", comment: ""), for: .normal)
         
+        
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -77,4 +80,18 @@ class AuthenticationViewController: UIViewController {
     
     }
     
+}
+
+extension AuthenticationViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.usernameTextField {
+            self.passwordTextField.becomeFirstResponder()
+        }
+        else if textField == self.passwordTextField
+        {
+            self.loginButton(self.loginButton!)
+        }
+        
+        return true
+    }
 }

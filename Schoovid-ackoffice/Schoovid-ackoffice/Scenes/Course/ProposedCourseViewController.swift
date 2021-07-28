@@ -19,9 +19,19 @@ class ProposedCourseViewController: UIViewController {
         self.tableViewProposedCourse.register(UINib(nibName: "ProposedCourseTableViewCell", bundle: nil), forCellReuseIdentifier: "proposedCourse-cell")
         self.tableViewProposedCourse.dataSource = self
         self.tableViewProposedCourse.delegate   = self
+        
+       
+        let imageBtn = UIImage(named: "power")
+        let customBarButton = UIBarButtonItem(image: imageBtn, style: .done, target: self, action: #selector(logout))
+        
+        self.navigationItem.leftBarButtonItem = customBarButton
+        
         // Do any additional setup after loading the view.
     }
 
+    @objc func logout() {
+        navigationController?.pushViewController(AuthenticationViewController(), animated: true)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         self.proposedCourseService.list(){ (proposedCourse) in

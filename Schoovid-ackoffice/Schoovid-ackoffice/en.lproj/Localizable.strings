@@ -24,5 +24,10 @@
 "live.startLive" = "Start thelive";
 "live.stopLive" = "Stop the live";
 
+"create.course.title.add" = "Add a course";
+"create.course.title.modify" = "Modify a cours";
 "create.course.modify" = "Modify the course";
+"create.course.save" = "Save";
+"create.course.add" = "Add";
+
 

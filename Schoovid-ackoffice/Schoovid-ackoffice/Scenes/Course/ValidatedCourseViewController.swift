@@ -38,9 +38,15 @@ class ValidatedCourseViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleAddProduct))
         ]
-        
+        let imageBtn = UIImage(named: "power")
+        let customBarButton = UIBarButtonItem(image: imageBtn, style: .done, target: self, action: #selector(logout))
+        self.navigationItem.leftBarButtonItem = customBarButton
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func logout() {
+        navigationController?.pushViewController(AuthenticationViewController(), animated: true)
     }
     
     @objc func handleAddProduct() {
@@ -146,8 +152,7 @@ func ISO8601ToLocalDate(isoDate : String) -> String
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssZ"
     
-    let date = dateFormatter.date(from: inputDate) ?? Date()
-    dateFormatter.dateFormat = "dd-MM-YYYY HH:mm:ss"
+    let date = dateFormatter.date(from: inputDate)!
     
     let dateToString = dateFormatter.string(from: date)
     

@@ -125,4 +125,34 @@ class CourseService {
         task.resume()
     }
     
+    public func updateCourse(id : String,course : Course, completion: @escaping (Bool) -> Void) -> Void {
+        
+        guard let createCourseURL =  URL(string : "http://51.178.139.94:3000/course/update/\(id)") else {
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url : createCourseURL)
+        request.httpMethod = "PUT"
+        
+        let dict = CourseFactory.dictonnaryFromCourse(course)
+        let data = try? JSONSerialization.data(withJSONObject: dict, options: .fragmentsAllowed)
+        request.httpBody = data
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data,response,error) in
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(false)
+                return
+            }
+            
+            completion(httpResponse.statusCode == 200)
+        }
+        
+        task.resume()
+        
+    }
+    
 }

@@ -22,4 +22,9 @@
 "live.startLive" = "Démarrer le live";
 "live.stopLive" = "Arrêter le live";
 
+
+"create.course.title.add" = "Ajouter un cours";
+"create.course.title.modify" = "Modifier un cours";
 "create.course.modify" = "Modifier le cours";
+"create.course.save" = "Enregistrer";
+"create.course.add" = "Ajouter";

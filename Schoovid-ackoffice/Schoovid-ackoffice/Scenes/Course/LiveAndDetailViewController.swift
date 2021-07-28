@@ -55,6 +55,10 @@ class LiveAndDetailViewController: UIViewController{
         self.chatTabView.delegate = self
         self.chatTabView.dataSource = self
         self.chatTabView.register(UINib(nibName : "ChatTableViewCell",bundle: nil), forCellReuseIdentifier: "comment-cell")
+        self.chatTabView.layer.borderColor = UIColor.lightGray.cgColor
+        self.chatTabView.layer.borderWidth = 1
+        self.chatTabView.layer.cornerRadius = 5
+        
         
         //Configure startLive button UI
         self.streamButton.layer.cornerRadius = 5
@@ -137,9 +141,6 @@ class LiveAndDetailViewController: UIViewController{
         socket.disconnect()
     }
     
-    @IBAction func emit(_ sender: Any) {
-        socket.emit("test")
-    }
     @IBAction func updateBn(_ sender: Any) {
         
         let createOrModifyController = CreateCourseViewController.newInstance(user: user, course: course, action: "Modifier")

@@ -15,6 +15,7 @@ class CreateCourseViewController: UIViewController{
     @IBOutlet var dateFinDiffusionDatePicker: UIDatePicker!
     @IBOutlet var categoryPickerView: UIPickerView!
     @IBOutlet var levelPickerView: UIPickerView!
+    @IBOutlet var actionButton: UIButton!
     
     var user: User!
     var course: Course!
@@ -30,6 +31,9 @@ class CreateCourseViewController: UIViewController{
     
     var idSelectedLevel : String?
     var idSelectedCategory : String?
+    
+    var levelIndex : Int?
+    
     
     static func newInstance(user : User, action : String) -> CreateCourseViewController {
         let controller = CreateCourseViewController()
@@ -48,7 +52,11 @@ class CreateCourseViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Ajouter un cours"
+        self.title = NSLocalizedString("create.course.title.add", comment: "")
+        
+        print(course)
+        print(user)
+        print(action)
         
         self.levelPickerView.tag = 2
         self.levelPickerView.delegate = self
@@ -57,33 +65,6 @@ class CreateCourseViewController: UIViewController{
         self.categoryPickerView.tag = 1
         self.categoryPickerView.delegate = self
         self.categoryPickerView.dataSource = self
-        
-        //On modify course
-        if(course != nil)
-        {
-            self.libelle.text = course.libelle
-            self.descriptionTextField.text = course.desc
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            
-            let date = ISO8601ToLocalDate(isoDate: course.date_diffusion!)
-          
-            dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-            
-            let dateFormatted = dateFormatter.date(from: date)!
-            
-            let datedate = Date() + 14 * 86400
-            
-            print(datedate)
-            print(dateFormatted)
-            
-            self.dateDiffusionDatePicker.setDate(datedate, animated: false)
-            self.dateFinDiffusionDatePicker.setDate(dateFormatted, animated: false)
-        }
-        else {
-            print("Course is nil so we add a course")
-        }
         
     }
     
@@ -95,7 +76,7 @@ class CreateCourseViewController: UIViewController{
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssZ"
         
         let date = dateFormatter.date(from: inputDate) ?? Date()
-        dateFormatter.dateFormat = "dd-MM-YYYY HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         let dateToString = dateFormatter.string(from: date)
         
@@ -111,6 +92,18 @@ class CreateCourseViewController: UIViewController{
             
             DispatchQueue.main.sync {
                 self.categoryPickerView.reloadAllComponents()
+                
+                if(self.course != nil)
+                {
+                    let indexLevel = self.courseCategories.firstIndex(where: {
+                        $0.id == self.course.categorieId
+                    })
+                    
+                    if(indexLevel != nil)
+                    {
+                        self.categoryPickerView.selectRow(indexLevel!, inComponent: 0, animated: false)
+                    }
+                }
             }
          
         }
@@ -123,7 +116,41 @@ class CreateCourseViewController: UIViewController{
             
             DispatchQueue.main.sync {
                 self.levelPickerView.reloadAllComponents()
+                
+                if(self.course != nil)
+                {
+                    let indexLevel = self.courseLevels.firstIndex(where: {
+                        $0.id == self.course.niveauId
+                    })
+                    
+                    if(indexLevel != nil)
+                    {
+                        self.levelPickerView.selectRow(indexLevel!, inComponent: 0, animated: false)
+                    }
+                }
             }
+        }
+        
+        //On modify course
+        if(course != nil && action == "Modifier")
+        {
+            self.actionButton.setTitle(NSLocalizedString("create.course.save", comment: ""), for: .normal)
+            
+            self.libelle.text = course.libelle
+            self.descriptionTextField.text = course.desc
+            
+            
+            let dateFormatter = DateFormatter()
+            let inputDate = course.date_diffusion?.replacingOccurrences(of: "T", with: " ")
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssZ"
+            
+            let formattedDate = dateFormatter.date(from: inputDate!)
+            
+            self.dateDiffusionDatePicker.setDate(formattedDate!, animated: true)
+            //self.dateFinDiffusionDatePicker.setDate(dateFormatted, animated: false)
+        }
+        else {
+            print("Course is nil so we add a course")
         }
     }
     
@@ -135,7 +162,6 @@ class CreateCourseViewController: UIViewController{
     
         //Format date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:00"
         
         let dateDiffusion = dateFormatter.string(from: dateDiffusionDatePicker.date) 
@@ -175,18 +201,53 @@ class CreateCourseViewController: UIViewController{
             return
         }
         
-        let course = Course(id: nil, libelle: courseLibelle, desc: description, date_diffusion: dateDiffusion, date_fin_diffusion: dateFinDiffusion, lien_diffusion: nil, formateurId: userId, niveauId: idLevel, categorieId: idCategory)
         
-        self.courseService.createCourse(course: course) {
-            (success) in
+        let courseToAdd = Course(id: nil, libelle: courseLibelle, desc: description, date_diffusion: dateDiffusion, date_fin_diffusion: dateFinDiffusion, lien_diffusion: nil, formateurId: userId, niveauId: idLevel, categorieId: idCategory)
+        
+        if(action == "Ajouter")
+        {
+            self.courseService.createCourse(course: courseToAdd) {
+                (success) in
+                
+                if(success)
+                {
+                    DispatchQueue.main.sync {
+                        self.navigationController?.pushViewController(HomeViewController.newInstance(user: self.user), animated: true)
+                    }
+                    
+                }
+                else {
+                    let alert = UIAlertController(title:"Erreur",message:"Une erreur a été rencontrée lors de l'ajout du cours",preferredStyle: .alert)
+                    self.present(alert, animated: true){
+                        Timer.scheduledTimer(withTimeInterval: 1, repeats:false){ (_) in
+                            alert.dismiss(animated:true)
+                        }
+                    }
+                }
+            }
+        }
+        else if(action == "Modifier" && course != nil)
+        {
             
-            if(success)
-            {
-                self.navigationController?.pushViewController(HomeViewController(), animated: true)
-            }
-            else {
-                //return a popup
-            }
+            self.courseService.updateCourse(id: course.id!, course: courseToAdd, completion: {
+                (success) in
+                
+                if(success)
+                {
+                    DispatchQueue.main.sync {
+                        self.navigationController?.pushViewController(HomeViewController.newInstance(user: self.user), animated: true)
+                    }
+                }
+                else {
+                    let alert = UIAlertController(title:"Erreur",message:"Une erreur a été rencontrée lors de la modification du cours",preferredStyle: .alert)
+                    self.present(alert, animated: true){
+                        Timer.scheduledTimer(withTimeInterval: 1, repeats:false){ (_) in
+                            alert.dismiss(animated:true)
+                        }
+                    }
+                }
+                
+            })
         }
 
     }
