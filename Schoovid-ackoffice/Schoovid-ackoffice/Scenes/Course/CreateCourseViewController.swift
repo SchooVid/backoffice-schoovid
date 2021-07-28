@@ -52,12 +52,14 @@ class CreateCourseViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("create.course.title.add", comment: "")
-        
-        print(course)
-        print(user)
-        print(action)
-        
+        if(action == "Ajouter")
+        {
+            self.title = NSLocalizedString("create.course.title.add", comment: "")
+        }
+        else if(action == "Modifier")
+        {
+            self.title = NSLocalizedString("create.course.title.modify",comment: "")
+        }
         self.levelPickerView.tag = 2
         self.levelPickerView.delegate = self
         self.levelPickerView.dataSource = self
@@ -142,15 +144,15 @@ class CreateCourseViewController: UIViewController{
             
             let dateFormatter = DateFormatter()
             let inputDate = course.date_diffusion?.replacingOccurrences(of: "T", with: " ")
+            let inputEndDate = course.date_fin_diffusion?.replacingOccurrences(of: "T", with: " ")
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssZ"
             
             let formattedDate = dateFormatter.date(from: inputDate!)
+            let formattedEndDate = dateFormatter.date(from: inputEndDate!)
             
             self.dateDiffusionDatePicker.setDate(formattedDate!, animated: true)
-            //self.dateFinDiffusionDatePicker.setDate(dateFormatted, animated: false)
-        }
-        else {
-            print("Course is nil so we add a course")
+            self.dateFinDiffusionDatePicker.setDate(formattedEndDate!, animated : true)
+           
         }
     }
     
@@ -164,13 +166,14 @@ class CreateCourseViewController: UIViewController{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:00"
         
-        let dateDiffusion = dateFormatter.string(from: dateDiffusionDatePicker.date) 
-        let dateFinDiffusion = dateFormatter.string(from : dateFinDiffusionDatePicker.date) 
+        let dateDiffusion = dateFormatter.string(from: dateDiffusionDatePicker.date.addingTimeInterval(TimeInterval(-120.0 * 60)))
+        let dateFinDiffusion = dateFormatter.string(from : dateFinDiffusionDatePicker.date.addingTimeInterval(TimeInterval(-120.0 * 60)))
         let courseLibelle = self.libelle.text ?? ""
         let description = self.descriptionTextField.text ?? ""
         let idCategory = self.idSelectedCategory ?? courseCategories[0].id!
         let idLevel = self.idSelectedLevel ?? courseLevels[0].id!
         let userId = self.user.id!
+    
         
         
         //Control values
@@ -178,6 +181,19 @@ class CreateCourseViewController: UIViewController{
         else {
             
             let alert = UIAlertController(title:"Erreur",message:"Date de début de diffusion et la date de fin de diffusion sont obligatoires",preferredStyle: .alert)
+            self.present(alert, animated: true){
+                Timer.scheduledTimer(withTimeInterval: 1, repeats:false){ (_) in
+                    alert.dismiss(animated:true)
+                    
+                }
+            }
+            
+            return
+        }
+        
+        if(dateFinDiffusionDatePicker.date < dateDiffusionDatePicker.date)
+        {
+            let alert = UIAlertController(title:"Erreur",message:"La date de fin de diffusion ne peut pas être inférieure à la date de diffusion",preferredStyle: .alert)
             self.present(alert, animated: true){
                 Timer.scheduledTimer(withTimeInterval: 1, repeats:false){ (_) in
                     alert.dismiss(animated:true)

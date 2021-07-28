@@ -23,12 +23,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOb-Mw-cOP">
-                    <rect key="frame" x="604" y="460" width="376" height="34"/>
+                    <rect key="frame" x="890" y="460" width="376" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="continue" textContentType="username"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn6-Ii-9RR">
-                    <rect key="frame" x="714" y="578" width="178" height="30"/>
+                    <rect key="frame" x="1000" y="578" width="178" height="30"/>
                     <color key="backgroundColor" red="0.50552839039999997" green="0.69225645069999997" blue="0.41563147309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="9YE-xy-LFY"/>
@@ -41,7 +41,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ny8-VV-2Jh">
-                    <rect key="frame" x="604" y="509" width="376" height="34"/>
+                    <rect key="frame" x="890" y="509" width="376" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="E6j-Rh-Asf"/>
                         <constraint firstAttribute="width" constant="376" id="paW-Jr-S9P"/>
@@ -50,7 +50,7 @@
                     <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="send" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logoScoovid-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="BNb-7g-S2j">
-                    <rect key="frame" x="64" y="262" width="500" height="500"/>
+                    <rect key="frame" x="64" y="262" width="786" height="500"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="500" id="2f5-pf-vd5"/>
                         <constraint firstAttribute="width" constant="500" id="LaK-o5-HS4"/>

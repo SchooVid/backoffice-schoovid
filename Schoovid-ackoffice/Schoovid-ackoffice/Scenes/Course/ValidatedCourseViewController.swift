@@ -153,8 +153,11 @@ func ISO8601ToLocalDate(isoDate : String) -> String
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.sssZ"
     
     let date = dateFormatter.date(from: inputDate)!
+    dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
     
     let dateToString = dateFormatter.string(from: date)
     
     return dateToString
+    
+   
 }
